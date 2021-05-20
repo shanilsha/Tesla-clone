@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Section({ title,descripition,link,leftBtnText,rightBtnText}) {
+function Section({ title,descripition,link,leftBtnText,rightBtnText,backgroundImg}) {
     
     return (
-        <Car_section>
+        <Car_section bgImage={backgroundImg}>
             <IteamText>
                 <h1>{title}</h1>
                 <h5>{descripition} <a href="/">{link}</a> </h5>
@@ -14,9 +14,13 @@ function Section({ title,descripition,link,leftBtnText,rightBtnText}) {
                     <LeftButton>
                         {leftBtnText}
                 </LeftButton>
+                {/* only left buttonns show in accessories */}
+                {rightBtnText && 
                     <RightButton>
                         {rightBtnText}
                  </RightButton>
+                }
+                 
                 </ButtonGroup>
                 <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
@@ -37,6 +41,7 @@ display:flex;
 flex-direction:column;
 justify-content:space-between;
 align-items:center;
+background-image:${props => `url("/images/${props.bgImage}")`};
 
 `
 const IteamText = styled.div`
