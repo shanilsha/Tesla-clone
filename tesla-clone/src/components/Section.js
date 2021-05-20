@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from "styled-components"
+import Fade from 'react-reveal/Fade';
 
 function Section({ title,descripition,link,leftBtnText,rightBtnText,backgroundImg}) {
     
     return (
         <Car_section bgImage={backgroundImg}>
+
+                <Fade bottom>
             <IteamText>
                 <h1>{title}</h1>
                 <h5>{descripition} <a href="/">{link}</a> </h5>
             </IteamText>
+            </Fade>
+
             <Buttons>
+            <Fade bottom>
                 <ButtonGroup>
                     <LeftButton>
                         {leftBtnText}
@@ -22,6 +28,7 @@ function Section({ title,descripition,link,leftBtnText,rightBtnText,backgroundIm
                 }
                  
                 </ButtonGroup>
+                </Fade>
                 <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
         </Car_section>
