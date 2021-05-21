@@ -14,6 +14,7 @@ function Home() {
             backgroundImg="model-s.jpg"
             leftBtnText="CUSTOM OREDER"
             rightBtnText="EXISTING INVENTORY"
+            
 
           />
          <Section
